@@ -1,11 +1,23 @@
-let weather = Math.floor(Math.random() * 51 - 5);
+var weather = Math.floor(Math.random() * 51) - 5;
 
-if (weather <= 10 && weather >= -5) {
-    document.write("It is" + " " + weather + " " + "The weather is cold")
-} else if (weather <= 16 && weather >= 11) {
-    document.write("It is" + " " + weather + " " + "The weather is moderate")
-} else if (weather <= 25 && weather >= 12) {
-    document.write("It is" + " " + weather + " " + "The weather is nice")
-} else if (weather <= 40 && weather >= 26) {
-    document.write("It is" + " " + weather + " " + "The weather is hot")
+var message = "C. The weather is  "
+
+if (weather <= 0) {
+    message += "freezing";
+    document.getElementById("weatherIcon").src = "img/freezing.png";
+
+} else if (weather <= 12) {
+    message += "cold";
+    document.getElementById("weatherIcon").src = "img/cold.png";
+
+} else if (weather <= 20) {
+    message += "warm";
+    document.getElementById("weatherIcon").src = "img/warm.png";
+
+} else if (weather <= 50) {
+    message += "hot"
+    document.getElementById("weatherIcon").src = "img/sun.png";
+
 }
+document.getElementById("temperature").innerHTML = (weather)
+document.getElementById("weatherDisplay").innerHTML = (message)
